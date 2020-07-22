@@ -1,15 +1,18 @@
 package me.yokeyword.fragmentation;
 
 import android.os.Bundle;
+
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+
 import android.view.MotionEvent;
 
 import androidx.fragment.app.FragmentationMagician;
+
 import me.yokeyword.fragmentation.anim.DefaultVerticalAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 import me.yokeyword.fragmentation.debug.DebugStackDelegate;
@@ -291,6 +294,10 @@ public class SupportActivityDelegate {
 
     private FragmentManager getSupportFragmentManager() {
         return mActivity.getSupportFragmentManager();
+    }
+
+    public boolean isNullFragmentManager() {
+        return mActivity == null ? true : (mActivity.getSupportFragmentManager() == null);
     }
 
     private ISupportFragment getTopFragment() {
